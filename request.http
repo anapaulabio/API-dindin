@@ -1,0 +1,16 @@
+GET http://localhost:8000
+
+###
+
+POST http://localhost:8000/cursos
+Content-Type: application/json
+
+{
+    "titulo": "MongoDB",
+    "descricao": "teste",
+    "professor": "Vinny"
+}
+
+###
+
+DELETE http://localhost:8000/cursos/0b69b135-6ad3-4675-90f6-7f04aa1add0b
