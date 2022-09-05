@@ -13,10 +13,10 @@ Como boa prática foi criado um arquivo courses.js na pasta model para gerenciar
 Neste arquivo foram criadas funções que representam os métodos **GET**, **POST** e **DELETE** do HTTP.
 Utilizei o módulo fs para possibilitar as alterações desejadas no arquivo json.
 Utilizei o mótulo path para indicar o caminho do arquivo .json ao módulo fs.
-Para gerar IDs universais foi utilizado o randomUUID = require("crypto").
+Para gerar IDs universais foi utilizado o randomUUID = require("crypto"). O model será chamado pelo controller
 <br><br>
 - O **controller** é a camada intermediaria do MVC, que faz a comunicação com o model, o view e as routes. Ele ajuda a controlar os fluxos que acontecem dentro da API, que são as *requisições* e *respostas*.
-No controler ficou definido os parâmetros para a request e o response.
+No controler ficou definido a estrutura para a request e o response de cada rota. O controller será chamado pela rota.
 <br>
 
 As requisições (*request*) recebem informação de três formas:
@@ -25,4 +25,4 @@ As requisições (*request*) recebem informação de três formas:
 3. **Query** -> /cursos/?id=510651502&value=201685323 
 <br>
 
-As rotas são os caminhos que as *responses* podem ser direcionadas de acordo com a URL. O arquivo em si indica o caminho de cada response no controller.
+As rotas são os caminhos que as *responses* podem ser direcionadas de acordo com a URL. O arquivo em si indica o caminho de cada response no controller, disparando as suas funções. A rota será chamada pelo servidor (server.js).
