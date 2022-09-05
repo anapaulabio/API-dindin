@@ -13,6 +13,14 @@ const coursesController = {
         res.status(204).json(newCourse);
     },
     
+    update: (req, res) => {
+        const {id} = req.params;
+        const {titulo, descricao, professor} = req.body;
+        const upCourse = modelCourses.updateCourse(id, titulo, descricao, professor);
+
+        res.status(200).json({message: "Curso alterado com sucesso!"});
+    },
+
     delete: (req, res) => {
         const {id} = req.params;
         const newList = modelCourses.deleteCourse(id);

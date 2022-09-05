@@ -22,6 +22,17 @@ function insertCourse(titulo, professor, descricao) {
   return newCourse;
 }
 
+function updateCourse(id, titulo, descricao, professor) {
+  const coursesListIndex = coursesList.findIndex((course) => course.id === id);
+  coursesList[coursesListIndex] = {
+    ...coursesList[coursesListIndex],
+    titulo,
+    descricao,
+    professor
+  }
+  courseFile();
+}
+
 // localiza o id através do findIndex e exclui o curso de acordo com o id indicado através dp splice
 function deleteCourse(id) {
   const coursesListIndex = coursesList.findIndex((course) => course.id === id);
@@ -38,4 +49,4 @@ function courseFile() {
 }
 
 //permite a exportação do arquivo
-module.exports = { getCoursesList, insertCourse, deleteCourse };
+module.exports = { getCoursesList, insertCourse, updateCourse, deleteCourse };
